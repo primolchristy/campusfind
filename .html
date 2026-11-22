@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusFind</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CampusFind</h1>
+  <h2>Lost & Found Campus Website</h2>
+  <p>Lost something? Let's find it!</p>
+
+  <input id="item" placeholder="Enter item name">
+  <input id="location" placeholder="Enter location">
+
+  <button onclick="reportItem()">Report Item</button>
+
+  <ul id="list"></ul>
+
+  <script>
+    let items = JSON.parse(localStorage.getItem("items")) || [];
+
+    function render() {
+      const list = document.getElementById("list");
+      list.innerHTML = "";
+      items.forEach((it, i) => {
+        const li = document.createElement("li");
+        li.textContent = it.name + " - " + it.place + " ";
+        const del = document.createElement("button");
+        del.textContent = "Delete";
+        del.onclick = () => {
+          items.splice(i, 1);
+          save();
+        };
+        li.appendChild(del);
+        list.appendChild(li);
+      });
+    }
+
+    function save() {
+      localStorage.setItem("items", JSON.stringify(items));
+      render();
+    }
+
+    function reportItem() {
+      const name = document.getElementById("item").value.trim();
+      const place = document.getElementById("location").value.trim();
+      if (!name || !place) {
+        alert("Please fill in both fields");
+        return;
+      }
+      items.push({ name, place });
+      document.getElementById("item").value = "";
+      document.getElementById("location").value = "";
+      save();
+    }
+
+    render();
+  </script>
+</body>
+</html>
