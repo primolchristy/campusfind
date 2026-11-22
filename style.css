@@ -1,0 +1,141 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+header {
+    background: #172554;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    margin: 0 0 10px;
+    font-size: 36px;
+}
+
+header p {
+    margin: 0;
+    color: #cbd5e1;
+}
+
+main {
+    width: 90%;
+    max-width: 850px;
+    margin: 30px auto;
+}
+
+.hero {
+    background: #dbeafe;
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.hero h2 {
+    color: #1e40af;
+    margin-top: 0;
+}
+
+.report, .items {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px #0f172a0d;
+}
+
+.report h2, .items h2 {
+    margin-top: 0;
+    color: #172554;
+}
+
+form {
+    display: grid;
+    gap: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    background: white;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #2563eb;
+}
+
+button {
+    padding: 13px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.item-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.item-card {
+    background: #f8fafc;
+    padding: 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow-wrap: anywhere;
+}
+
+.item-card h3 {
+    margin-top: 0;
+    color: #1e40af;
+}
+
+.status {
+    font-weight: bold;
+    color: #2563eb;
+}
+
+footer {
+    background: #172554;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    font-size: 14px;
+}
+
+@media (max-width: 500px) {
+    main {
+        width: 94%;
+    }
+
+    header h1 {
+        font-size: 29px;
+    }
+
+    .report, .items {
+        padding: 18px;
+    }
+}
